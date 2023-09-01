@@ -1,0 +1,33 @@
+### Mostrar todas las peliculas
+GET http://localhost:1234/movies
+
+### Mostrar pelicula por ID
+GET http://localhost:1234/movies/c906673b-3948-4402-ac7f-73ac3a9e3105
+
+### Recuperar todas las peliculas de un genero
+GET http://localhost:1234/movies?genre=ACTION
+
+### Crear una pelicula con POST
+POST http://localhost:1234/movies
+Content-Type: application/json
+
+{
+  "query": "SELECT * FROM employees",
+  "title": "Paty Cantu",
+  "year": 1975,
+  "director": "Francis For Cappola",
+  "duration": 175,
+  "poster": "https://img.fruugo.com/product/4/49/14441494_max.jpg",
+  "genre": [
+    "Crime",
+    "Drama"
+  ]
+}
+
+### Modificar una pelicula
+PATCH http://localhost:1234/movies/c906673b-3948-4402-ac7f-73ac3a9e3105
+Content-Type: application/json
+
+{
+  "year": "1999"
+}
